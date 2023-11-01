@@ -1,48 +1,25 @@
-abstract class CShape {
-	protected String color;
-
-	public CShape(String str) {
-		color = str;
-	}
-
-	public abstract void show();
+interface iAaa {
+	public void show();
 }
 
-class CRectangle extends CShape {
-	int width, height;
+class Cbbb {
+	public int num = 10;
 
-	public CRectangle(int w, int h) {
-		super("Yellow");
-		width = w;
-		height = h;
+	public void set(int n) {
+		num = n;
 	}
+}
 
+class Cccc extends Cbbb implements iAaa {
 	public void show() {
-		System.out.print("color=" + color + ", ");
-		System.out.println("area=" + width * height);
+		System.out.println("num=" + num);
 	}
 }
 
-class CCircle extends CShape {
-	double radius;
-
-	public CCircle(double r) {
-		super("Green");
-		radius = r;
-	}
-
-	public void show() {
-		System.out.print("color=" + color + ", ");
-		System.out.println("area=" + 3.14 * radius * radius);
-	}
-}
-
-public class hw11_1 {
+public class hw11_8 {
 	public static void main(String args[]) {
-		CRectangle rect = new CRectangle(5, 10);
-		rect.show();
-
-		CCircle cir = new CCircle(2.0);
-		cir.show();
+		Cccc cc = new Cccc();
+		cc.set(5);
+		cc.show(); // ¦L¥X num=5
 	}
 }
