@@ -1,1 +1,45 @@
+interface iVolume {
+    // 顯示球體的資料
+    void showData();
+
+    // 計算球體積
+    double vol();
+}
+
+abstract class Sphere implements iVolume {
+    final double PI = 3.14;
+    protected int x;
+    protected int y;
+
+    public Sphere(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class Circle extends Sphere {
+    private int radius;
+
+    public Circle(int x, int y, int radius) {
+        super(x, y);
+        this.radius = radius;
+    }
+
+    public void showData() {
+        System.out.println("球心:(" + x + "," + y + ")");
+        System.out.println("半徑:" + radius);
+        System.out.printf("球體積:%.2f%n", vol());
+    }
+
+    public double vol() {
+        return (4.0 / 3.0) * PI * Math.pow(radius, 3);
+    }
+}
+
+public class Ex11_12 {
+    public static void main(String[] args) {
+        Circle c1 = new Circle(8, 6, 2);
+        c1.showData();
+    }
+}
 
