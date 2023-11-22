@@ -1,48 +1,20 @@
-abstract class CShape {
-	protected String color;
+///a
+abstract class Caaa {
+    protected int num;
 
-	public CShape(String str) {
-		color = str;
-	}
+    public Caaa(int n) {
+        num = n;
+    }
 
-	public abstract void show();
+    public abstract void show();
 }
+///b
+class Cbbb extends Caaa {
+    public Cbbb(int n) {
+        super(n); // 呼叫父類別的建構子
+    }
 
-class CRectangle extends CShape {
-	int width, height;
-
-	public CRectangle(int w, int h) {
-		super("Yellow");
-		width = w;
-		height = h;
-	}
-
-	public void show() {
-		System.out.print("color=" + color + ", ");
-		System.out.println("area=" + width * height);
-	}
-}
-
-class CCircle extends CShape {
-	double radius;
-
-	public CCircle(double r) {
-		super("Green");
-		radius = r;
-	}
-
-	public void show() {
-		System.out.print("color=" + color + ", ");
-		System.out.println("area=" + 3.14 * radius * radius);
-	}
-}
-
-public class hw11_1 {
-	public static void main(String args[]) {
-		CRectangle rect = new CRectangle(5, 10);
-		rect.show();
-
-		CCircle cir = new CCircle(2.0);
-		cir.show();
-	}
+    public void show() {
+        System.out.println("num-" + num);
+    }
 }
