@@ -1,25 +1,26 @@
 interface iAaa {
-	public void show();
+    void show();
 }
 
-class Cbbb {
-	public int num = 10;
+class Bbb {
+    public int num = 10;
 
-	public void set(int n) {
-		num = n;
-	}
+    public void set(int n) {
+        num = n;
+    }
 }
 
-class Cccc extends Cbbb implements iAaa {
-	public void show() {
-		System.out.println("num=" + num);
-	}
+class Ccc extends Bbb implements iAaa {
+    // 實作 iAaa 介面的 show 函數
+    public void show() {
+        System.out.println("num-" + num);
+    }
 }
 
-public class hw11_8 {
-	public static void main(String args[]) {
-		Cccc cc = new Cccc();
-		cc.set(5);
-		cc.show(); // ¦L¥X num=5
-	}
+public class EX11_5 {
+    public static void main(String[] args) {
+        Ccc obj = new Ccc();
+        obj.set(5);
+        obj.show(); // 印出 num=5
+    }
 }
